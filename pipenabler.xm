@@ -264,3 +264,9 @@ static Boolean MGGetBoolAnswer_r(CFStringRef property)
 		}
 	}
 }
+
+ %ctor {
+ 	if ([NSBundle.mainBundle.bundleIdentifier isEqualToString:@"com.apple.MediaPlayer.RemotePlayerService"])
+ 		return;
+ 	%init;
+ }
